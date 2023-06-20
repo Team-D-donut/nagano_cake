@@ -12,12 +12,12 @@ devise_for :admin,skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
- scope module: :pabulic do
+ scope module: :public do
  root to: 'homes#top'
  get '/about', to: 'homes#about'
  resources :items, only: %i[index show]
  resources :customers, only: [] do
- 
+
  collection do
  get 'show', to: 'customers#show', as: 'current_customer'
  get 'information/edit', to: 'customers#edit', as: 'edit_current_customer'
