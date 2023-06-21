@@ -13,13 +13,13 @@
             <th>ステータス</th>
           </tr>
         </thead>
-        <!--% @customers.each do |customer| %>-->
+        <% @customers.each do |customer| %>
         <tbody>
           <tr>
-            <!--<td>%= customer.id %></td>-->
-            <!--<td>%= customer.name %></td>-->
-            <!--<td>%= customer.eamil %></td>-->
-            <!--<td%= customer.is_deleted %></td>-->
+            <td><%= customer.id %></td>
+            <td><%= customer.name %></td>
+            <td><%= customer.eamil %></td>
+            <td><%= customer.is_deleted %></td>
           </tr>
         </tbody>
       </table>
