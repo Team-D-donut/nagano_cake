@@ -1,22 +1,29 @@
-<h2>会員一覧</h2>
-<%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-<div>
-  <table class="table table-borderd">
-    <thead>
-      <tr>
-        <th>会員ID</th>
-        <th colspan="3">氏名</th>
-        <th colspan="3">メールアドレス</th>
-        <th>ステータス</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>テスト</td>
-        <td>テスト</td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <h2>会員一覧</h2>
+    <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+    <div>
+      <table class="table table-borderd">
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th colspan="3">氏名</th>
+            <th colspan="3">メールアドレス</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <% @customers.each do |customer| %>
+        <tbody>
+          <tr>
+            <td><%= customer.id %></td>
+            <td><%= customer.name %></td>
+            <td><%= customer.eamil %></td>
+            <td<%= customer.is_deleted %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
 </div>
