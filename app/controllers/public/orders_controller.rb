@@ -8,7 +8,7 @@ class Public::OrdersController < ApplicationController
   def complete
   end
 
-  def intex
+  def index
   end
 
   def show

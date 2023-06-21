@@ -16,5 +16,5 @@ class Admin::CustomersController < ApplicationController
     @customer.update
     redirect_to admin_customer_path(@customer)
   end
-
+  
 end
