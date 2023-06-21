@@ -1,2 +1,32 @@
 <h1>Public::CartItems#index</h1>
-<p>Find me in app/views/public/cart_items/index.html.erb</p>
+<h2>ショッピングカート</h2>
+      <table class="table table-hover table-inverse">
+      <thead>
+    　　<tr>
+          <th>商品名</th>
+          <th>単価(税込)</th>
+          <th>小計</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+          <td>
+            <%= link_to user_path(book.user_id) do %>
+              <%= item.name>
+              <%= image_tag item.user.get_profile_image(100,100) %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to book.title, book_path(book.id) %>
+          </td>
+          <td>
+            <%= book.body%>
+          </td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+¥<%= @total.round.to_s(:delimited)%>
+
