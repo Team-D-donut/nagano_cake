@@ -3,32 +3,32 @@
     <div class="col-8">
       <h3>マイページ</h3>
       <strong>登録情報</strong>
-      <%= link_to "編集する", edit_current_customer_customers_path, class: "btn btn-success" %>
+      <%= link_to "編集する", edit_current_customer_customers_path, class: "btn btn-green" %>
       <table class="table">
         <tbody>
           <tr>
-            <td class="table-success">氏名</td>
-            <td><%= current_customer.last_name %> <%= current_customer.first_name %></td>
+            <td class="table-green">氏名</td>
+            <td><%= @customer.last_name %> <%= @customer.first_name %></td>
           </tr>
           <tr>
-            <td class="table-success">フリガナ</td>
-            <td><%= current_customer.kana_last_name %> <%= current_customer.kana_first_name %></td>
+            <td class="table-green">フリガナ</td>
+            <td><%= @customer.kana_last_name %> <%= @customer.kana_first_name %></td>
           </tr>
           <tr>
-            <td class="table-success">郵便番号</td>
-            <td><%= current_customer.post_code %></td>
+            <td class="table-green">郵便番号</td>
+            <td><%= @customer.post_code %></td>
           </tr>
           <tr>
-            <td class="table-success">住所</td>
-            <td><%= current_customer.address %></td>
+            <td class="table-green">住所</td>
+            <td><%= @customer.address %></td>
           </tr>
           <tr>
-            <td class="table-success">電話番号</td>
-            <td><%= current_customer.telephone_number %></td>
+            <td class="table-green">電話番号</td>
+            <td><%= @customer.telephone_number %></td>
           </tr>
           <tr>
-            <td class="table-success">メールアドレス</td>
-            <td><%= current_customer.email %></td>
+            <td class="table-green">メールアドレス</td>
+            <td><%= @customer.email %></td>
           </tr>
         </tbody>
       </table>
@@ -36,11 +36,11 @@
         <tbody>
           <tr>
             <th style="width: 40%">配送先</th>
-            <th style="width: 60%"><%= link_to "一覧を見る", addresses_path, class: "btn btn-success" %></th>
+            <th style="width: 60%"><%= link_to "一覧を見る", addresses_path, class: "btn btn-green" %></th>
           </tr>
           <tr>
             <th style="width: 40%">注文履歴</th>
-            <th style="width: 60%"><%= link_to "一覧を見る", orders_path, class: "btn btn-success" %></th>
+            <th style="width: 60%"><%= link_to "一覧を見る", orders_path, class: "btn btn-green" %></th>
           </tr>
         </tbody>
       </table>
