@@ -71,7 +71,7 @@ def create # Order に情報を保存します
   end
 end
 
-  def intex
+  def index
   end
 
   def show
