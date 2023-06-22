@@ -17,12 +17,32 @@ class Public::CartItemsController < ApplicationController
 
         # もしカート内に「同じ」商品がない場合は通常の保存処理 
         elsif @cart_item.save
-            　@cart_items = current_customer.cart_items.all
-            　render 'index'
-        else　# 保存できなかった場合
+              @cart_items = current_customer.cart_items.all
+            render 'index'
+        else  # 保存できなかった場合
             render 'index'
         end
   end
+  def update
+        cart_item = CartItem.find(params[:id])
+        cart_item.update
+        @cart_items = CartItem.all
+        render 'index'
+        
+  def destroy
+        cart_item = CartItem.find(params[:id])
+        cart_item.destroy
+        @cart_items = CartItem.all
+        render 'index'
+  end
+
+  def all_destroy  #カート内全て削除
+        cart_items = CartItem.all
+        cart_items.destroy_all
+        　render 'index'
+  end
+
+
   
   private
     def cart_item_params

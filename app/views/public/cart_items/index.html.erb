@@ -9,16 +9,16 @@
           <th>小計</th>
           <th></th>
         </tr>
-        <%total = 0 %> #合計金額totalの初期化
+        <%total = 0 %>
 
- <% if current_customer.cart_items.present? %> #カート内に商品があった場合
+ <% if current_customer.cart_items.present? %>
     <% @cart_items.each do |cart_item| %> 
      <tr>
        <td>
-         <%= attachment_image_tag(cart_item.item, :image, size: "60x50", fallback: "no_image.jpg") %> #商品画像
+         
          <%= cart_item.item.name %> #商品名
        </td>
-       <td><%= (cart_item.item.price*1.08).to_i %></td>　#商品単価(価格×1.08)
+       <td><%= (cart_item.item.price*1.08).to_i %></td>
        <td>
          <%= form_with model: cart_item, url: cart_item_path(cart_item), local: true, method: :patch do |f| %>
            <%= f.number_field :quantity, min: 1, max:10, id: "quantity_cart"%>
