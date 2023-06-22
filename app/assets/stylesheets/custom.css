@@ -5,6 +5,16 @@ p, label, a, em, strong, th, td, h1, h2, h3 {
 table td {
   border-top: 1px solid #78420E;
 }
+
+.heading {
+    top: 120px;
+    left: 130px;
+    font-size: 30px;
+}
+
+.outer {
+    margin-top: 30px;
+}
 /*------------------------------------
 - COLOR green
 ------------------------------------*/
