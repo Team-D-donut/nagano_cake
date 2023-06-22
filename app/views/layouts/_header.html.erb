@@ -1,8 +1,8 @@
 <header>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg bg-brown">
     <div class="container">
       <%= link_to root_path , class:"navbar-brand" do %>
-        <%= image_tag "nagoya_cake_logo.png", size: '60x60' %>
+        <%= image_tag "nagoya_cake_logo.png", size: '100x100' %>
       <% end %>
         <div class="collapse navbar-collapse">
           <% if customer_signed_in? %>
@@ -14,22 +14,22 @@
             </p>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <%= link_to current_customer_customers_path, class: 'nav-link btn btn-sm btn-success mr-3' do %>
+                <%= link_to current_customer_customers_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
                   <i class="fa-solid fa-user"></i>マイページ
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to items_path, class: 'nav-link btn btn-sm btn-success mr-3' do %>
+                <%= link_to items_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
                   <i class="fa-solid fa-cake-candles"></i>商品一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to cart_items_path, class: 'nav-link btn btn-sm btn-success mr-3' do %>
+                <%= link_to cart_items_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
                   <i class="fa-solid fa-cart-shopping"></i>カート
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= button_to destroy_customer_session_path, method: :delete, class: 'nav-link btn btn-sm btn-success mr-3', data: { turbo: false } do %>
+                <%= button_to destroy_customer_session_path, method: :delete, class: 'nav-link btn btn-sm btn-green mr-3', data: { turbo: false } do %>
                   <i class="fa-solid fa-right-from-bracket"></i>ログアウト
                 <% end %>
               </li>
@@ -37,22 +37,22 @@
           <% else %>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <%= link_to about_path, class: 'nav-link btn btn-sm btn-success mr-3' do %>
+                <%= link_to about_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
                   <i class="fa-solid fa-kitchen-set"></i>About
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to items_path, class: 'nav-link btn btn-sm btn-success mr-3' do %>
+                <%= link_to items_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
                   <i class="fa-solid fa-cake-candles"></i>商品一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_customer_registration_path, class: 'nav-link btn btn-sm btn-success mr-3' do %>
+                <%= link_to new_customer_registration_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
                   <i class="fa-solid fa-user-plus"></i>新規登録
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_customer_session_path, class: 'nav-link btn btn-sm btn-success mr-3' do %>
+                <%= link_to new_customer_session_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
                   <i class="fa-solid fa-right-to-bracket"></i>ログイン
                 <% end %>
               </li>
