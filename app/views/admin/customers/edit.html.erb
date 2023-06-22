@@ -6,12 +6,12 @@
         <%= @customer.errors.count %>件のエラーが発生しました
         <ul>
           <% @customer.errors.full_messages.each do |message| %>
-            <li>%= message %></li>
+            <li><%= message %></li>
           <% end %>
         </ul>
       <% end %>
 
-      <h2><%= @customer.last_name+@customer.first_name %>さんの会員情報編集</h2>
+      <h2><%= @customer.last_name + @customer.first_name %>さんの会員情報編集</h2>
       <div class="form-group">
         <%= form_with model: @customer, url:admin_customer_path, method: :patch do |f| %>
         <div class="field">
