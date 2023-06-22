@@ -1,13 +1,13 @@
 class Public::AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
-    @address.user_id = current_user.id
+    @address.customer_id = current_customer.id
       if @address.save
         flash[:notice] = "You have created address successfully."
       redirect_to addresses_path
       #else
-      #@user = current_user
-      #@books = Book.all
+      #@customer = current_customer
+      #@addresses = Address.all
       #render :index
       end
   end
