@@ -6,38 +6,38 @@
       <%= render "public/shared/error_messages", resource: resource %>
         <div class="field">
           <%= f.label :"名前" %>
-          <p>(姓)</p>
-          <%= f.text_field :first_name, autofocus: true %>
+          <>(姓)</p>
+          <%= f.text_field :last_name, autofocus: true %>
           <p>(名)</p>
-          <%= f.text_field :last_name %>
+          <%= f.text_field :first_name %>
         </div>
-  
+
         <div class="field">
           <%= f.label :"フリガナ" %><br>
-          <%= f.text_field :kana_first_name %>
           <%= f.text_field :kana_last_name %>
+          <%= f.text_field :kana_first_name %>
         </div>
-  
+
         <div class="field">
           <%= f.label :"メールアドレス" %><br>
           <%= f.email_field :email, autocomplete: "email" %>
         </div>
-  
+
         <div class="field">
           <%= f.label :"郵便番号(ハイフンなし)" %><br>
           <%= f.text_field :post_code %>
         </div>
-  
+
         <div class="field">
           <%= f.label :"住所" %><br>
           <%= f.text_field :address %>
         </div>
-  
+
         <div class="field">
           <%= f.label :"電話番号(ハイフンなし）" %><br>
           <%= f.text_field :telephone_number %>
         </div>
-  
+
         <div class="field">
           <%= f.label :"パスワード(６文字以上)" %>
           <% if @minimum_password_length %>
@@ -45,17 +45,17 @@
           <% end %><br>
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
-  
+
         <div class="field">
           <%= f.label :"パスワード(確認用)" %><br>
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
-  
+
         <div class="actions">
-          <%= f.submit "新規登録" %>
+          <%= f.submit "新規登録", class:"btn btn-green" %>
         </div>
       <% end %>
-  
+
       <%= render "public/shared/links" %>
     </div>
   </div>
