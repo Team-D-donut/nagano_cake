@@ -29,9 +29,9 @@ Customer.create!(
       first_name: '直美',
       kana_last_name: 'ヨコウチ',
       kana_first_name: 'ナオミ',
-      post_code: '07020814799',
+      post_code: '0702084',
       address: '兵庫県尼崎市南武庫之荘4-1-9',
-      telephone_number: '6573556',
+      telephone_number: '6573456556',
       email: 'naomiyokochi_51553364@gmail.com',
       password: '111111',
       is_deleted: false

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <h2>ログイン</h2>
+    <%= flash[:error] %>
     <%= form_with model: @customer, url: customer_session_path do |f| %>
       <div class="field">
         <%= f.label :email %><br>

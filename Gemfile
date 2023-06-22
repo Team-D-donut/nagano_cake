@@ -58,3 +58,4 @@ gem 'devise'
 gem 'kaminari','~> 1.2.1'
 gem 'bootstrap','~> 4.6.2'
 gem "enum_help"
+gem 'rails-i18n'
