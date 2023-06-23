@@ -5,15 +5,15 @@ class Public::AddressesController < ApplicationController
       if @address.save
         flash[:notice] = "You have created address successfully."
       redirect_to addresses_path
-      #else
-      #@customer = current_customer
-      #@addresses = Address.all
-      #render :index
+      else
+      @customer = current_customer
+      @addresses = Address.all
+      render :index
       end
   end
   
   def index
-    @addresses = Address
+    @addresses = Address.all
     @address= Address.new
     @customer = current_customer
   end
@@ -28,7 +28,7 @@ class Public::AddressesController < ApplicationController
     @address.update(address_params)
     if @address.save
       flash[:notice] = "You have updated book successfully."
-      redirect_to address_path(@address.id)
+      redirect_to '/addresses'
     else
       @addresses = Address.all
       render :edit

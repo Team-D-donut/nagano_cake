@@ -25,9 +25,10 @@ class Public::CartItemsController < ApplicationController
   end
   def update
         cart_item = CartItem.find(params[:id])
-        cart_item.update
+        cart_item.update(cart_item_params)
         @cart_items = CartItem.all
         render 'index'
+  end
         
   def destroy
         cart_item = CartItem.find(params[:id])
@@ -36,16 +37,17 @@ class Public::CartItemsController < ApplicationController
         render 'index'
   end
 
-  def all_destroy  #カート内全て削除
+  def destroy_all  #カート内全て削除
         cart_items = CartItem.all
         cart_items.destroy_all
-        　render 'index'
+        render 'index'
   end
 
 
   
   private
-    def cart_item_params
+  
+  def cart_item_params
       params.require(:cart_item).permit(:item_id, :price, :quantity)
-    end
-end
+  end
+end 

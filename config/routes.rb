@@ -28,7 +28,7 @@ devise_for :admin,skip: [:registrations, :passwords], controllers: {
  end
 end
 
-resources :cart_items, only: %i[index create destroy] do
+resources :cart_items, only: %i[index create destroy update] do
  collection do
   delete :destroy_all
  end
