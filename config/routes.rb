@@ -41,7 +41,6 @@ resources :orders, only: %i[new create index show] do
   end
 end
 resources :addresses, only: %i[index edit create update destroy] 
-#delete 'addresses/:id' => 'addresses#destroy', as: 'destroy_address'
 end
 
 
