@@ -1,2 +1,50 @@
-<h1>Public::Items#show</h1>
-<p>Find me in app/views/public/items/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>商品詳細</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= image_tag @item.image, size: "300x200" %>
+    </div>
+    <div class="col">
+      <table>
+        <tr>
+          <td>商品名</td>
+          <td><%= @item.name %></td>
+        </tr>
+        <tr>
+          <td>商品説明</td>
+          <td><%= @item.introduction %></td>
+        </tr>
+        <tr>
+          <td>税込価格</br>（税抜価格）</td>
+          <td><%= (@item.price*1.1).floor %>(<%= @item.price %>) 円</td>
+        </tr>
+        <tr>
+          <td>販売ステータス</td>
+          <td>
+            <% if @item.is_active == true %>
+              販売中
+            <% else %>
+              販売停止中
+            <% end %>
+          </td>
+        </tr>
+      </table>
+
+      <div class="mb-8">
+        <% if @item.is_active == true %>
+          <%= form_with(model: @cart_item,url: cart_items_path, method: :post,local: true)do |f| %>
+           <%= f.hidden_field :item_id, :value => @item.id %>
+            <%= f.label :quantity, "個数選択" %>
+            <%= f.select :quantity, *[1..50]  %>
+          <%= f.submit "Add to Cart", class:"w-full cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

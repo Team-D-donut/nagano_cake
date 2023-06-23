@@ -1,46 +1,70 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="row mt-3">
+    <div class="col-lg-3 offset-lg-1">
       <h2>商品編集</h2>
     </div>
   </div>
 
-  <div class="row mx-auto">
+  <% if @item.errors.any? %>
+  <%= @item.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @item.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <div class="row">
+    <div class="mx-auto">
     <%= form_with model: @item, url:admin_item_path, method: :patch, local: true do |f| %>
-    <table>
+    <table class="table table-borderless mt-2">
       <tr>
-        <td><%= f.label :商品画像 %></td>
-        <td><%= f.file_field :image, accept: "image/*" %></td>
+        <div class="form-group">
+          <td><%= f.label :商品画像 %></td>
+          <td><%= f.file_field :image, accept: "image/*" %></td>
+        </div>
       </tr>
       <tr>
-        <td><%= f.label :商品名 %></td>
-        <td><%= f.text_field :name %></td>
+        <div class="form-group">
+          <td><%= f.label :商品名 %></td>
+          <td><%= f.text_field :name, class: "form-control" %></td>
+        </div>
       </tr>
       <tr>
-        <td><%= f.label :商品説明 %></td>
-        <td><%= f.text_area :introduction %></td>
+        <div class="form-group">
+          <td><%= f.label :商品説明 %></td>
+          <td><%= f.text_area :introduction, class: "form-control" %></td>
+        </div>
       </tr>
       <tr>
-        <td><%= f.label :ジャンル %></td>
-        <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+        <div class="form-group">
+          <td><%= f.label :ジャンル %></td>
+          <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+        </div>
       </tr>
       <tr>
-        <td><%= f.label :税抜価格 %></td>
-        <td><%= f.text_field :price %></td>
+        <div class="form-group">
+          <td><%= f.label :税抜価格 %></td>
+          <td><%= f.text_field :price, class: "form-control" %></td>
+          <td>円</td>
+        </div>
       </tr>
       <tr>
-        <td><%= f.label :販売ステータス %></td>
-        <td>
+        <div class="form-group">
+          <td><%= f.label :販売ステータス %></td>
+          <td>
           <%= f.radio_button :is_active, :true, checked: true %>
           <%= f.label :status_ture, "販売中" %>
           <%= f.radio_button :is_active, :false %>
           <%= f.label :status_false, "販売停止中" %>
+        </div>
       </tr>
+      </div>
     </table>
 
     <div class="row">
-      <div class="col mx-auto">
-        <%= f.submit "変更を保存", class:'btn btn-success' %>
+      <div class="col-5 mx-auto">
+        <%= f.submit "変更を保存", class:'btn btn-lg btn-success' %>
       </div>
     </div>
     <% end %>
