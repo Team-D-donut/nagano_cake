@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2>会員一覧</h2>
+    <div class="col-md-10 col-md-offset-1 mx-auto">
+      <h2 class="mt-4">会員一覧</h2>
       <div>
         <table class="table table-hover">
           <thead>
@@ -22,11 +22,18 @@
                 <% end %>
               </td>
               <td><%= customer.email %></td>
-              <td class="font-weight-bold"><%= customer.is_deleted ? "退会" : "有効" %></td>
+              <td class="font-weight-bold">
+                <% if customer.is_deleted == true %>
+                  <div class="font-weight-bold text-secondary">退会</div>
+                <% else %>
+                  <div class="font-weight-bold text-success">有効</div>
+                <% end %>
+              </td>
             </tr>
           </tbody>
           <% end %>
         </table>
+        <%= paginate @customers %>
       </div>
     </div>
   </div>
