@@ -3,7 +3,7 @@
     <div class="col-md-10 col-md-offset-1">
       <h2>会員一覧</h2>
       <div>
-        <table class="table">
+        <table class="table table-hover">
           <thead>
             <tr>
               <th>会員ID</th>
@@ -22,7 +22,7 @@
                 <% end %>
               </td>
               <td><%= customer.email %></td>
-              <td><%= customer.is_deleted ? "退会" : "有効" %></td>
+              <td class="font-weight-bold"><%= customer.is_deleted ? "退会" : "有効" %></td>
             </tr>
           </tbody>
           <% end %>
@@ -31,3 +31,4 @@
     </div>
   </div>
 </div>
+<%= button_to "確認用ログアウト", destroy_admin_session_path, method: :delete %>
