@@ -1,5 +1,22 @@
 p, label, a, em, strong, th, td, h1, h2, h3 {
-  color: #78420E;
+    color: #78420E;
+}
+
+a:hover {
+    color: #100d09;
+}
+
+.color-olive,
+.footer-nav {
+    color: #D7D56F;
+}
+
+h1, h2, h3, h4, h5, strong {
+    font-family: "Josefin Slab",serif;
+}
+
+p, a, th, td {
+    font-family: Montserrat,sans-serif;
 }
 
 table td {
