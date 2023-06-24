@@ -29,6 +29,12 @@ table td {
     font-size: 30px;
 }
 
+.about-text {
+    top: 120px;
+    left: 130px;
+    font-size: 20px;
+}
+
 .outer {
     margin-top: 30px;
 }
