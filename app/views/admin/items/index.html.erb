@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <table class="table table-borderless mt-2">
+  <table class="table table-hover table-borderless mt-2">
     <thead class="table-green">
       <tr>
         <th>商品ID</th>
@@ -37,5 +37,7 @@
     </tbody>
     <% end %>
   </table>
-  <%= paginate @items %>
+  <div class="row mx-auto">
+    <%= paginate @items %>
+  </div>
 </div>
