@@ -15,4 +15,9 @@ import "bootstrap";
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-require('jquery')  
+require('jquery')
+
+// フラッシュメッセージが5秒経つとスローで消える
+$(function(){
+  setTimeout("$('.notice-alert').fadeOut('slow')", 5000);
+});

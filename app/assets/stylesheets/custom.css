@@ -1,4 +1,4 @@
-p, label, a, em, strong, th, td, h1, h2, h3 {
+p, label, a, em, strong, th, td, h1, h2, h3, h4, h5, h6 {
     color: #78420E;
 }
 
@@ -37,6 +37,10 @@ table td {
 
 .outer {
     margin-top: 30px;
+}
+
+.alert-notice {
+    
 }
 /*------------------------------------
 - COLOR green

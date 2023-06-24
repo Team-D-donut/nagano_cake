@@ -10,10 +10,21 @@ ja:
       payment:
         credit_card: "クレジットカード"
         transfer: "銀行振込"
-
     ordered_item:
       make_status:
         production_not_possible: "着手不可"
         production_pending: "製作待ち"
         in_production: "製作中"
         production_complete: "製作完了"
+  activerecord:
+    attributes:
+      customer:
+        email: メールアドレス
+        password: パスワード
+        last_name: 姓
+        first_name: 名
+        kana_last_name: セイ
+        kana_first_name: メイ
+        post_code: 郵便番号
+        address: 住所
+        telephone_number: 電話番号
