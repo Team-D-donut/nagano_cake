@@ -6,8 +6,8 @@
   </div>
 
   <div class="row mt-2">
-    <table class="table table-green table-borderless table-striped">
-      <thead>
+    <table class="table table-hover table-borderless">
+      <thead class="table-green">
         <tr>
           <th>購入日時</th>
           <th>購入者</th>
@@ -19,17 +19,19 @@
         <% @orders.each do |order| %>
         <tr>
           <td>
-            <%= link_to admin_oder_path(order.id) do %>
-              <%= order.created_at_strftime('%Y/%m/%d') %>
+            <%= link_to admin_order_path(order.id) do %>
+              <%= order.created_at.strftime('%Y/%m/%d') %>
             <% end %>
           </td>
           <td><%= order.customer.last_name %> <%= order.customer.first_name %></td>
           <td><%= order.ordered_items.sum(:quantity) %></td>
-          <td>注文ステータス</td>
+          <td><%= order.status_i18n %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    <%= paginate @orders %>
+    <div class="row mx-auto">
+      <%= paginate @orders %>
+    </div>
   </div>
 </div>
