@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :customern #一つの会員
+  belongs_to :customer #一つの会員
   has_many :ordered_items #中間テーブル
   has_many :items, through: :ordered_items  #注文には商品が多くある
 
