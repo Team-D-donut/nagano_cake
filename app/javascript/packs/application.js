@@ -19,5 +19,5 @@ require('jquery')
 
 // フラッシュメッセージが5秒経つとスローで消える
 $(function(){
-  setTimeout("$('.alert-notice').fadeOut('slow')", 5000);
+  setTimeout("$('.alert-info').fadeOut('slow')", 5000);
 });

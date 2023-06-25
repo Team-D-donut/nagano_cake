@@ -1,4 +1,4 @@
- <%= render 'layouts/flash' %>
+<%= render 'layouts/flash' %>
 <div class="container-fluid">
   <div class="row">
     <div class="col-3">
@@ -15,10 +15,13 @@
       <div class="outer position-relative">
         <%= image_tag  "e0714_1.png", size: '900x560' %>
         <div class="position-absolute heading">
-          <h3>ようこそ、ながのCAKEへ！</h3><br>
-          <strong>このサイトは、ケーキ販売のECサイトになります。<br>
-          会員でない方も商品の閲覧はできますが、<br>
-          購入には会員登録が必要になります。</strong>
+          <strong>
+          <h2>ようこそ、ながのCAKEへ！</h2><br>
+          <p>
+            このサイトは、ケーキ販売のECサイトになります。<br>
+            会員でない方も商品の閲覧はできますが、<br>
+            購入には会員登録が必要になります。
+          </p></strong>
         </div>
       </div>
       <div class="outer">
@@ -26,7 +29,9 @@
         <div class="box d-flex flex-row mt-1 mb-1">
           <% @items.each do |item| %>
             <div class="item-box pr-2 pt-1" style="width: 300px; heading: 250px">
-              <%= image_tag item.image, class: "rounded-circle shadow border border-brown", size: '200x150'%>
+              <%= link_to(item, class:"item") do %>
+                <%= image_tag item.image, class: "rounded-circle shadow border border-brown", size: '200x150'%>
+              <% end %>
               <p class="mt-3 mb-0" > <%= item.name %></p>
               <p>￥<%= item.price %>(税抜)</p>
             </div>
