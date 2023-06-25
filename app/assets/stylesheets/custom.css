@@ -11,12 +11,12 @@ a:hover {
     color: #D7D56F;
 }
 
-h1, h2, h3, h4, h5, strong {
-    font-family: "Josefin Slab",serif;
+h1, h2, h3, h4, h5, strong, label {
+    font-family: 'Sawarabi Gothic', sans-serif;
 }
 
-p, a, th, td {
-    font-family: Montserrat,sans-serif;
+p, a, th, td, button {
+    font-family: 'Sawarabi Mincho', serif;
 }
 
 table td {
@@ -40,7 +40,28 @@ table td {
 }
 
 .alert-notice {
-    
+    color: #78420E;
+    background-color: #c3d8a1;
+    border-color: #bad293;
+}
+
+.form-control {
+    display: block;
+    width: 25%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #607b33;
+    border-radius: 0.25rem;
+}
+
+.underline {
+    text-decoration: underline;
 }
 /*------------------------------------
 - COLOR green
