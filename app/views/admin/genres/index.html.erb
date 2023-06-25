@@ -5,14 +5,7 @@
     </div>
   </div>
 
-  <% if @genre.errors.any? %>
-  <%= @genre.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @genre.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-  <% end %>
+  <%= render "layouts/errors" ,obj: @genre %>
 
   <div class="row-10">
     <div class="col-10 mt-5 mb-5">
