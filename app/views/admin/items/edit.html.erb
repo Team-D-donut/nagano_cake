@@ -27,13 +27,13 @@
       <tr>
         <div class="form-group">
           <td><%= f.label :商品名 %></td>
-          <td><%= f.text_field :name, class: "form-control" %></td>
+          <td><%= f.text_field :name, :size=>"30" %></td>
         </div>
       </tr>
       <tr>
         <div class="form-group">
           <td><%= f.label :商品説明 %></td>
-          <td><%= f.text_area :introduction, class: "form-control" %></td>
+          <td><%= f.text_area :introduction, :size=>"30x5" %></td>
         </div>
       </tr>
       <tr>
@@ -45,8 +45,7 @@
       <tr>
         <div class="form-group">
           <td><%= f.label :税抜価格 %></td>
-          <td><%= f.text_field :price, class: "form-control" %></td>
-          <td>円</td>
+          <td><%= f.text_field :price, :size=>"30" %> 円</td>
         </div>
       </tr>
       <tr>
@@ -64,7 +63,7 @@
 
     <div class="row">
       <div class="col-5 mx-auto">
-        <%= f.submit "変更を保存", class:'btn btn-lg btn-success' %>
+        <%= f.submit "変更を保存", class:'btn btn-lg btn-green' %>
       </div>
     </div>
     <% end %>

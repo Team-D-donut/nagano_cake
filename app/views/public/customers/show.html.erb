@@ -1,51 +1,48 @@
-<div class="container">
+<%= render 'layouts/flash' %>
+<div class="container-fluid">
   <div class="row">
-    <div class="col-8">
-      <h3>マイページ</h3>
+    <div class="col-1"></div>
+    <div class="col-5 m-4">
+      <h2>マイページ</h2>
       <strong>登録情報</strong>
-      <%= link_to "編集する", edit_current_customer_customers_path, class: "btn btn-green" %>
-      <table class="table">
+      <%= link_to "編集する", edit_current_customer_customers_path, class: "btn btn-green ml-4 mb-3" %>
+      <table class="table table-border" >
         <tbody>
           <tr>
-            <td class="table-green">氏名</td>
-            <td><%= @customer.last_name %> <%= @customer.first_name %></td>
+            <td class="table-border table-green">氏名</td>
+            <td class="table-border"><%= @customer.last_name %> <%= @customer.first_name %></td>
           </tr>
           <tr>
-            <td class="table-green">フリガナ</td>
-            <td><%= @customer.kana_last_name %> <%= @customer.kana_first_name %></td>
+            <td class="table-border table-green">フリガナ</td>
+            <td class="table-border"><%= @customer.kana_last_name %> <%= @customer.kana_first_name %></td>
           </tr>
           <tr>
-            <td class="table-green">郵便番号</td>
-            <td><%= @customer.post_code %></td>
+            <td class="table-border table-green">郵便番号</td>
+            <td class="table-border"><%= @customer.post_code %></td>
           </tr>
           <tr>
-            <td class="table-green">住所</td>
-            <td><%= @customer.address %></td>
+            <td class="table-border table-green">住所</td>
+            <td class="table-border"><%= @customer.address %></td>
           </tr>
           <tr>
-            <td class="table-green">電話番号</td>
-            <td><%= @customer.telephone_number %></td>
+            <td class="table-border table-green">電話番号</td>
+            <td class="table-border"><%= @customer.telephone_number %></td>
           </tr>
           <tr>
-            <td class="table-green">メールアドレス</td>
-            <td><%= @customer.email %></td>
+            <td class="table-border table-green">メールアドレス</td>
+            <td class="table-border"><%= @customer.email %></td>
           </tr>
         </tbody>
       </table>
-      <table>
-        <tbody>
-          <tr>
-            <th style="width: 40%">配送先</th>
-            <th style="width: 60%"><%= link_to "一覧を見る", addresses_path, class: "btn btn-green" %></th>
-          </tr>
-          <tr>
-            <th style="width: 40%">注文履歴</th>
-            <th style="width: 60%"><%= link_to "一覧を見る", orders_path, class: "btn btn-green" %></th>
-          </tr>
-        </tbody>
-      </table>
-
-    <div class="col-md-auto"></div>
-
+      <div class="">
+        <strong>配送先</strong>
+        <%= link_to "一覧を見る", addresses_path, class: "btn btn-info mb-3", style:"margin-left: 50px;" %>
+      </div>
+        <div class="">
+          <strong>注文履歴</strong>
+          <%= link_to "一覧を見る", orders_path, class: "btn btn-info ml-4 mb-3" %>
+        </div>
+    </div>
+    <div class="col-4"></div>
   </div>
 </div>
