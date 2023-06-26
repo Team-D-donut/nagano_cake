@@ -1,9 +1,9 @@
 <div class= "container">
   <div class='row mt-4'>
-    <div class="col-lg-3 md-3">
+    <div class="col-lg-3 md-3 text-nowrap">
       <h4>ショッピングカート</h4>
     </div>
-    <div class="col-lg-2 md-1 offset-lg-7">
+    <div class="col-lg-2 md-1 offset-lg-7 text-nowrap">
       <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete,class: "btn btn-danger","data-confirm" => "本当に空にしますか？" %>
     </div>
   </div>
@@ -52,7 +52,7 @@
     <div class="col-3">
       <table class='table table-border'>
           <tr>
-            <th class="table-green">合計金額</th>
+            <th class="table-green text-nowrap">合計金額</th>
             <td style="width:160px"><%= total %></td>
           </tr>
       </table>
