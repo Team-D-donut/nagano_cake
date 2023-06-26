@@ -6,8 +6,10 @@
 <div class='list-wrap'>
   <% @items.each do |item| %>
     <div class="list-box">
+        <%= link_to(item, class:"item") do %>
         <%= image_tag item.image, size:"200x200", class: "p-5 object-cover" %>
         <div class= "list-comment">
+        <% end%>
           <span><%= link_to item.name, item_path(item.id) %></span></br>
           <span>¥<%= item.price %></span>
             <!--% if item.is_active == true %-->
