@@ -28,7 +28,7 @@
         <td>
           <%= form_with model:@order, url:admin_order_path do |f| %>
           <%= f.select :status,  Order.statuses.keys.map {|k| [I18n.t("enums.order.status.#{k}"), k]} %>
-          <%= f.submit "更新" , class: "btn btn-success btn-sm" %>
+          <%= f.submit "更新" , class: "btn btn-green btn-sm" %>
           <% end %>
         </td>
       </tr>
@@ -59,7 +59,7 @@
               <%= f.select :make_status,  OrderedItem.make_statuses.keys.map {|k| [I18n.t("enums.ordered_item.make_status.#{k}"), k]} %>
             </td>
             <td>
-              <%= f.submit "更新" , class: "btn btn-success btn-sm" %>
+              <%= f.submit "更新" , class: "btn btn-green btn-sm" %>
               <% end %>
             </td>
           </tr>
