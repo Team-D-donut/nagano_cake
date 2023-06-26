@@ -445,3 +445,23 @@ button.bg-brown:focus {
 a.text-brown:hover, a.text-brown:focus {
     color: #4a2808 !important;
 }
+
+main {
+  width: 880px;
+  margin: 0 auto;
+}
+
+.list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-box {
+  width: 200px;
+  height: 250px;
+  margin: 5px;
+}
+
+.list-comment {
+  width: 200px;
+}
