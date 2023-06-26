@@ -24,8 +24,23 @@ p, a, th, td, button {
     font-family: 'Sawarabi Mincho', serif;
 }
 
-table td {
+.table td,
+.table th {
   border-top: 1px solid #78420E;
+}
+
+.table thead th {
+    border-top: 2px solid #78420E;
+    border-bottom: 2px solid #78420E;
+}
+
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}
+
+.table tbody + tbody {
+    border-top: 1px solid #78420E;
 }
 
 .heading {
@@ -73,6 +88,8 @@ table td {
     border: 1px solid #555 !important;
     border-top: 1px solid #555 !important;
 }
+
+
 /*------------------------------------
 - COLOR green
 ------------------------------------*/

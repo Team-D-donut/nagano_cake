@@ -6,7 +6,7 @@
       <% end %>
         <div class="collapse navbar-collapse">
           <% if customer_signed_in? %>
-            <p class="text-left">
+            <p class="text-left mt-3" style="color: #ebea90; margin-left: 7%;">
               ようこそ、
               <% if current_customer %>
                 <%= current_customer.last_name %>さん！
@@ -35,6 +35,9 @@
               </li>
             </ul>
           <% elsif admin_signed_in? %>
+            <p class="text-left mt-3" style="color: #ebea90; font-size: 17px;">
+              ようこそ、管理人さん！
+            </p>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <%= link_to admin_items_path, class: 'nav-link btn btn-sm btn-green mr-3' do %>
