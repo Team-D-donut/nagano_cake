@@ -7,20 +7,20 @@
         <div class="form-group row">
           <%= f.label :"名前", class:"col-sm-3 col-form-label" %>
           <div class="col-sm-3">
-            <%= f.text_field:last_name, autofocus: true, class:"form-control", style:"width: 210px;" %>
+            <%= f.text_field:last_name, autofocus: true, class:"form-control form-w-80" %>
           </div>
           <div class="col-sm-4">
-            <%= f.text_field:first_name, class:"form-control", style:"width: 210px;" %>
+            <%= f.text_field:first_name, class:"form-control", style: "width: 60%;" %>
           </div>
         </div>
 
         <div class="form-group row">
           <%= f.label :"フリガナ" ,class:"col-sm-3 col-form-label"%>
           <div class="col-sm-3">
-            <%= f.text_field:kana_last_name, class:"form-control", style:"width: 210px;" %>
+            <%= f.text_field:kana_last_name, class:"form-control form-w-80" %>
           </div>
           <div class="col-sm-4">
-            <%= f.text_field:kana_first_name, class:"form-control", style:"width: 210px;" %>
+            <%= f.text_field:kana_first_name, class:"form-control", style: "width: 60%;" %>
           </div>
         </div>
 
@@ -34,7 +34,7 @@
         <div class="form-group row">
           <%= f.label :"住所",class:"col-sm-3 col-form-label" %>
           <div class="col-sm-9">
-            <%= f.text_field:address, class:"form-control", style: "width:80%;" %>
+            <%= f.text_field:address, class:"form-control form-w-80"%>
           </div>
         </div>
 
@@ -47,14 +47,14 @@
         <div class="form-group row">
           <%= f.label :"メールアドレス",class:"col-sm-3 col-form-label" %>
           <div class="col-sm-9">
-            <%= f.email_field :email, autocomplete: "email", class:"form-control" %>
+            <%= f.email_field :email, autocomplete: "email", class:"form-control form-w-80" %>
           </div>
         </div>
 
         <div class="form-group row">
           <div class="col-sm-3"></div>
           <div class="col-sm-9">
-            <%= f.submit "新規登録", class:"btn btn-green mb-3 mt-3 mr-5", style:"width: 30%;" %>
+            <%= f.submit "編集内容を保存", class:"btn btn-green mb-3 mt-3 mr-5", style:"width: 30%;" %>
             <%= link_to "退会する", confirm_current_customer_customers_path, class:"btn btn-danger ml-5" %>
           </div>
         </div>

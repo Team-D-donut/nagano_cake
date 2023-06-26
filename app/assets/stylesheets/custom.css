@@ -88,6 +88,14 @@ p, a, th, td, button {
     border-radius: 0.25rem;
 }
 
+.newsession-form-name {
+    width: 18%;
+}
+
+.form-w-80 {
+    width: 80%;
+}
+
 .underline {
     text-decoration: underline;
 }
@@ -95,10 +103,6 @@ p, a, th, td, button {
 .table-border {
     border: 1px solid #555 !important;
     border-top: 1px solid #555 !important;
-}
-
-.newsession-form-name {
-    width: 18%;
 }
 
 .w-125 {
