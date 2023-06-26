@@ -4,8 +4,10 @@
     <div class="col-1"></div>
     <div class="col-5 m-4">
       <h2>マイページ</h2>
-      <strong>登録情報</strong>
-      <%= link_to "編集する", edit_current_customer_customers_path, class: "btn btn-green ml-4 mb-3" %>
+      <div class="d-flex" style="width: 300px;">
+        <strong class="w-125">登録情報</strong>
+        <%= link_to "編集する", edit_current_customer_customers_path, class: "btn btn-green mb-3 w-135" %>
+      </div>
       <table class="table table-border" >
         <tbody>
           <tr>
@@ -34,14 +36,12 @@
           </tr>
         </tbody>
       </table>
-      <div class="">
-        <strong>配送先</strong>
-        <%= link_to "一覧を見る", addresses_path, class: "btn btn-info mb-3", style:"margin-left: 50px;" %>
+      <div class="d-flex flex-wrap" style="width: 300px;">
+        <strong class="w-125">配送先</strong>
+        <%= link_to "一覧を見る", addresses_path, class: "btn btn-info mb-3 w-135" %>
+        <strong class="w-125">注文履歴</strong>
+        <%= link_to "一覧を見る", orders_path, class: "btn btn-info mb-3 w-135" %>
       </div>
-        <div class="">
-          <strong>注文履歴</strong>
-          <%= link_to "一覧を見る", orders_path, class: "btn btn-info ml-4 mb-3" %>
-        </div>
     </div>
     <div class="col-4"></div>
   </div>

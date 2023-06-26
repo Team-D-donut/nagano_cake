@@ -92,6 +92,18 @@ p, a, th, td, button {
 .newsession-form-name {
     width: 18%;
 }
+
+.w-125 {
+    width: 125px;
+}
+
+.w-135 {
+    width: 135px;
+}
+
+.w-200 {
+    width: 200px;
+}
 /*------------------------------------
 - COLOR green
 ------------------------------------*/
