@@ -6,14 +6,7 @@
     </div>
   </div>
 
-  <% if @item.errors.any? %>
-  <%= @item.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @item.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render "layouts/errors" ,obj: @item %>
 
   <div class="row">
     <div class="mx-auto">
@@ -28,12 +21,12 @@
       <tr>
         <div class="form-group">
           <td><%= f.label :商品名 %></td>
-          <td><%= f.text_field :name, placeholder: "商品名", class: "form-control" %></td>
+          <td><%= f.text_field :name, placeholder: "商品名", :size=>"30" %></td>
         </div>
       </tr>
       <tr>
           <td><%= f.label :商品説明 %></td>
-          <td><%= f.text_area :introduction, placeholder: "ここに説明文を記述します", class: "form-control" %></td>
+          <td><%= f.text_area :introduction, placeholder: "ここに説明文を記述します", :size=>"30x5" %></td>
       </tr>
       <tr>
           <td><%= f.label :ジャンル %></td>
@@ -42,8 +35,7 @@
       <tr>
         <div class="form-group">
           <td><%= f.label :税抜価格 %></td>
-          <td><%= f.text_field :price, placeholder: "1000", class: "form-control" %></td>
-          <td>円</td>
+          <td><%= f.text_field :price, placeholder: "1000", :size=>"30" %> 円</td>
         </div>
       </tr>
        <tr>
@@ -57,7 +49,7 @@
     </table>
       <div class="row">
         <div class="col-5 mx-auto">
-          <%= f.submit "新規登録", class: "btn btn-lg btn-success" %>
+          <%= f.submit "新規登録", class: "btn btn-lg btn-green" %>
         </div>
       </div>
     <% end %>
