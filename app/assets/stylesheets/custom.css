@@ -30,8 +30,7 @@ p, a, th, td, button {
 }
 
 .table thead th {
-    border-top: 2px solid #78420E;
-    border-bottom: 2px solid #78420E;
+    border: 1px solid #78420E;
 }
 
 .table-borderless td,
@@ -43,9 +42,18 @@ p, a, th, td, button {
     border-top: 1px solid #78420E;
 }
 
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #78420E;
+}
+
+.table-th {
+    width: 35%;
+}
+
 .heading {
-    top: 120px;
-    left: 130px;
+    top: 22%;
+    left: 14%;
     font-size: 30px;
 }
 

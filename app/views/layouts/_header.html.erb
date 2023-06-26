@@ -2,11 +2,11 @@
   <nav class="navbar navbar-expand-lg bg-brown">
     <div class="container">
       <%= link_to root_path , class:"navbar-brand" do %>
-        <%= image_tag "nagoya_cake_logo.png", size: '100x100' %>
+        <%= image_tag "nagoya_cake_logo.png", size: '80x80' %>
       <% end %>
         <div class="collapse navbar-collapse">
           <% if customer_signed_in? %>
-            <p class="text-left mt-3" style="color: #ebea90; margin-left: 7%;">
+            <p class="text-left mt-3" style="color: #ebea90; margin-left: 7%; font-size: 15px;">
               ようこそ、
               <% if current_customer %>
                 <%= current_customer.last_name %>さん！
