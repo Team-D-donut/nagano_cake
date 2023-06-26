@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>商品詳細</h2>
+      <h2></h2>
     </div>
   </div>
   <div class="row">
@@ -11,26 +11,13 @@
     <div class="col">
       <table>
         <tr>
-          <td>商品名</td>
           <td><%= @item.name %></td>
         </tr>
         <tr>
-          <td>商品説明</td>
           <td><%= @item.introduction %></td>
         </tr>
         <tr>
-          <td>税込価格</br>（税抜価格）</td>
-          <td><%= (@item.price*1.1).floor %>(<%= @item.price %>) 円</td>
-        </tr>
-        <tr>
-          <td>販売ステータス</td>
-          <td>
-            <% if @item.is_active == true %>
-              販売中
-            <% else %>
-              販売停止中
-            <% end %>
-          </td>
+          <td>¥<%= (@item.price*1.1).floor %>(税込)</td>
         </tr>
       </table>
 
@@ -38,7 +25,7 @@
         <% if @item.is_active == true %>
           <%= form_with(model: @cart_item,url: cart_items_path, method: :post,local: true)do |f| %>
            <%= f.hidden_field :item_id, :value => @item.id %>
-            <%= f.label :quantity, "個数選択" %>
+            <%= f.label :quantity, "個数" %>
             <%= f.select :quantity, *[1..50]  %>
           <%= f.submit "カートに入れる", class:"btn btn-green" %>
           <% end %>
