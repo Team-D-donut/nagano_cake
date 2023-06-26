@@ -531,3 +531,23 @@ button.bg-danger:focus {
 a.text-danger:hover, a.text-danger:focus {
     color: #a1313c !important;
 }
+
+main {
+  width: 880px;
+  margin: 0 auto;
+}
+
+.list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-box {
+  width: 200px;
+  height: 250px;
+  margin: 5px;
+}
+
+.list-comment {
+  width: 200px;
+}
