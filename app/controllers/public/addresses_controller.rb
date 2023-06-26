@@ -27,7 +27,7 @@ class Public::AddressesController < ApplicationController
     @address = Address.find(params[:id])
     @address.update(address_params)
     if @address.save
-      flash[:notice] = "You have updated book successfully."
+      flash[:notice] = "変更内容が保存されました。"
       redirect_to '/addresses'
     else
       @addresses = Address.all
