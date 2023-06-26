@@ -89,7 +89,9 @@ p, a, th, td, button {
     border-top: 1px solid #555 !important;
 }
 
-
+.newsession-form-name {
+    width: 18%;
+}
 /*------------------------------------
 - COLOR green
 ------------------------------------*/
