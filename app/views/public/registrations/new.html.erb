@@ -7,23 +7,23 @@
         <div class="form-group row">
           <%= f.label :"名前", class:"col-sm-2 col-form-label" %>
           <p class="mr-1" style="margin-left: 66px;">(姓)</p>
-          <%= f.text_field:last_name, autofocus: true, class:"form-control" %>
+          <%= f.text_field:last_name, autofocus: true, class:"form-control newsession-form-name" %>
           <p class="mr-1" style="margin-left: 25px;">(名)</p>
-          <%= f.text_field:first_name, class:"form-control" %>
+          <%= f.text_field:first_name, class:"form-control newsession-form-name" %>
         </div>
 
         <div class="form-group row">
           <%= f.label :"フリガナ" ,class:"col-sm-2 col-form-label"%>
           <p class="mr-1" style="margin-left: 47px;">(セイ)</p>
-          <%= f.text_field:kana_last_name, class:"form-control" %>
+          <%= f.text_field:kana_last_name, class:"form-control newsession-form-name" %>
           <p class="mr-1 ml-1">(メイ)</p>
-          <%= f.text_field:kana_first_name, class:"form-control" %>
+          <%= f.text_field:kana_first_name, class:"form-control newsession-form-name" %>
         </div>
 
         <div class="form-group row">
           <%= f.label :"メールアドレス",class:"col-sm-3 col-form-label" %>
           <div class="col-sm-9">
-            <%= f.email_field :email, autocomplete: "email", class:"form-control" %>
+            <%= f.email_field :email, autocomplete: "email", class:"form-control", style:"width: 58%;" %>
           </div>
         </div>
 
@@ -37,7 +37,7 @@
         <div class="form-group row">
           <%= f.label :"住所",class:"col-sm-3 col-form-label" %>
           <div class="col-sm-9">
-            <%= f.text_field:address, class:"form-control", style: "width:80%;" %>
+            <%= f.text_field:address, class:"form-control", style: "width:58%;" %>
           </div>
         </div>
 
