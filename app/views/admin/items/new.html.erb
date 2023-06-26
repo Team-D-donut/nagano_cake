@@ -21,12 +21,12 @@
       <tr>
         <div class="form-group">
           <td><%= f.label :商品名 %></td>
-          <td><%= f.text_field :name, placeholder: "商品名"  %></td>
+          <td><%= f.text_field :name, placeholder: "商品名", :size=>"30" %></td>
         </div>
       </tr>
       <tr>
           <td><%= f.label :商品説明 %></td>
-          <td><%= f.text_area :introduction, placeholder: "ここに説明文を記述します"  %></td>
+          <td><%= f.text_area :introduction, placeholder: "ここに説明文を記述します", :size=>"30x5" %></td>
       </tr>
       <tr>
           <td><%= f.label :ジャンル %></td>
@@ -35,7 +35,7 @@
       <tr>
         <div class="form-group">
           <td><%= f.label :税抜価格 %></td>
-          <td><%= f.text_field :price, placeholder: "1000"  %> 円</td>
+          <td><%= f.text_field :price, placeholder: "1000", :size=>"30" %> 円</td>
         </div>
       </tr>
        <tr>
