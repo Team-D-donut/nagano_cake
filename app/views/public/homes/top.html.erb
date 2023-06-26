@@ -1,7 +1,7 @@
 <%= render 'layouts/flash' %>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3">
+    <div class="col-1 col-xl-3">
     <!--  <div class="pt-5 pl-5">-->
     <!--    <nav class="nav flex-column bg-green" style="width: 200px;">-->
     <!--      <a>ケーキ</a>-->
@@ -11,18 +11,18 @@
     <!--    </nav>-->
     <!--  </div>-->
     </div>
-    <div class="col-7">
-      <div class="outer position-relative" style="width: 100%;">
-        <%= image_tag  "kanban.png", size: 'autoxauto' %>
-
-        <div class="position-absolute heading">
-          <strong>
-          <h2>ようこそ、ながのCAKEへ！</h2><br>
-          <p>
-            このサイトは、ケーキ販売のECサイトになります。<br>
-            会員でない方も商品の閲覧はできますが、<br>
-            購入には会員登録が必要になります。
-          </p></strong>
+    <div class="col-10 col-xl-8">
+      <div class="outer" style="width: 100%;">
+        <div class="heading-image position-relative">
+          <div class="position-absolute heading-text"> 
+            <strong>
+            <h2>ようこそ、ながのCAKEへ！</h2><br>
+            <p>
+              このサイトは、ケーキ販売のECサイトになります。<br>
+              会員でない方も商品の閲覧はできますが、<br>
+              購入には会員登録が必要になります。
+            </p></strong>
+          </div>
         </div>
       </div>
       <div class="outer">
@@ -43,6 +43,6 @@
         </div>
       </div>
     </div>
-    <div class="col-2"></div>
+    <div class="col-1 col-xl-2"></div>
   </div>
 </div>
