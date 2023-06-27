@@ -1,23 +1,35 @@
-<% if @address.errors.any? %>
-  <%= @address.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @address.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-<h1>配送先編集</h1>
-<%= form_with model: @address do |f| %>
-  
-<h4>郵便番号(ハイフンなし)</h4>
-<%= f.text_field :post_code %>
-
-<h4>住所</h4>
-<%= f.text_field :address %><br>
-
-<h4>宛名</h4>
-<%= f.text_field :name %>
-
-<%= f.submit '変更内容を保存', class: "btn btn-green" %><br>
-
-<% end %>
+<%= render 'layouts/errors', obj: @address %>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1 class="mt-4">配送先編集</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <%= form_with model: @address do |f| %>
+        <div class="form-group">
+          <div class="field">
+            <%= f.label :post_code, "郵便番号(ハイフンなし)" %>
+          </div>
+          <div class="field">
+            <%= f.label :address, "住所" %>
+          </div>
+          <div class="field">
+            <%= f.label :name, "宛名" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <%= f.text_field :post_code, class:"form-control", style:"width: 40%;" %>
+        <%= f.text_field :address, class:"form-control mt-1 mb-1", style:"width: 100%;"%>
+        <%= f.text_field :name, class:"form-control", style:"width: 40%;" %>
+      </div>
+      <div class="col-4 mt-auto">
+        <%= f.submit '新規登録', class: "btn btn-green" %>
+      <% end %>
+      </div>
+    </diV>
+  </div>
+  <div class="row" style="margin-bottom: 300px;"></div>
+</div>
