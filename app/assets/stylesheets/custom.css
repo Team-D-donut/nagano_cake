@@ -51,10 +51,25 @@ p, a, th, td, button {
     width: 35%;
 }
 
-.heading {
-    top: 22%;
-    left: 14%;
-    font-size: 30px;
+.heading-text {
+    width: 500px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-image {
+    width: 750px;
+    height: 470px;
+    background-image: url('kanban2.png');
+    background-size: cover;
+}
+
+.about-image {
+    width: 500px;
+    height: 320px;
+    background-image: url('3708631_s.jpg');
+    background-size: cover;
 }
 
 .about-text {
