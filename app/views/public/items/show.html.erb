@@ -5,33 +5,30 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
-      <%= image_tag @item.image, size: "300x200" %>
+    <div class="col-5 mt-5">
+      <%= image_tag @item.image, size: "300x200", class:"object-cover"  %>
     </div>
-    <div class="col">
-      <table>
-        <tr>
-          <td><%= @item.name %></td>
-        </tr>
-        <tr>
-          <td><%= @item.introduction %></td>
-        </tr>
-        <tr>
-          <td>¥<%= (@item.price*1.1).floor %>(税込)</td>
-        </tr>
-      </table>
-
+    <div class="col-7 mt-5">
+      <h2><strong><%= @item.name %></strong></h2>
+      <p class="mb-3 mt-1">
+        <%= @item.introduction %>
+      </p>
+      <p class="mb-2">
+        <strong>¥<%= (@item.price*1.1).floor %></strong>(税込)
+      </p>
       <div class="mb-8">
         <% if @item.is_active == true %>
           <%= form_with(model: @cart_item,url: cart_items_path, method: :post,local: true)do |f| %>
-           <%= f.hidden_field :item_id, :value => @item.id %>
-            <%= f.label :quantity, "個数" %>
-            <%= f.select :quantity, *[1..50]  %>
-          <%= f.submit "カートに入れる", class:"btn btn-green" %>
+            <%= f.hidden_field :item_id, :value => @item.id %>
+            <% if customer_signed_in? %>
+              <%= f.label :quantity, "個数" %>
+              <%= f.select :quantity, *[1..50] %>
+              <%= f.submit "カートに入れる", class:"btn btn-green" %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
-
     </div>
   </div>
+  <div style="margin-bottom: 300px;"></div>
 </div>

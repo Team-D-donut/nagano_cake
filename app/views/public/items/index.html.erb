@@ -1,22 +1,29 @@
 <div class= "container">
-    <div class='row'>
-      <div>
-        <h4>商品一覧</h4>
-　　　</div>
-<div class='list-wrap'>
-  <% @items.each do |item| %>
-    <div class="list-box">
-        <%= link_to(item, class:"item") do %>
-        <%= image_tag item.image, size:"200x200", class: "p-5 object-cover" %>
-        <div class= "list-comment">
-        <% end%>
-          <span><%= link_to item.name, item_path(item.id) %></span></br>
-          <span>¥<%= item.price %></span>
-            <!--% if item.is_active == true %-->
-        </div>
+  <div class='row'>
+    <div class="col-1"></div>
+    <div class="col-8 mt-4">
+      <h2>商品一覧</h2>
     </div>
-  <% end %>
   </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class='d-flex flex-wrap' style="width: 800px;">
+        <% @items.each do |item| %>
+          <div class="list-box m-2">
+            <%= link_to(item, class:"item") do %>
+              <%= image_tag item.image, size:"180x140", class: "object-cover p-2" %>
+            <% end %>
+            <div class= "list-comment">
+              <%= link_to item.name, item_path(item.id), class:"item-text" %></br>
+              <p>¥<%= item.price %></p>
+              <!--% if item.is_active == true %-->
+            </div>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="row mx-auto">
     <%= paginate @items %>

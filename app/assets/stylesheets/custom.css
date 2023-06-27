@@ -595,17 +595,23 @@ main {
   margin: 0 auto;
 }
 
-.list-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .list-box {
-  width: 200px;
+  width: 180px;
   height: 250px;
-  margin: 5px;
+  padding: 5px;
+  min-width: 0;
 }
 
 .list-comment {
   width: 200px;
+}
+
+.object-cover {
+    border-radius: 1rem;
+}
+
+.item-text {
+    word-break: break-all;
+    width: 90%;
+    display: inline-block;
 }
