@@ -1,2 +1,84 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class="container">
+
+  <%= render 'layouts/errors', obj: @customer %>
+
+  <h2 class="mt-4"><%= @customer.last_name + @customer.first_name %>さんの会員情報編集</h2>
+  <div class="form-group mt-5">
+    <%= form_with model: @customer, url:admin_customer_path, method: :patch do |f| %>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :customer_id, "会員ID" %>
+      </div>
+      <div class="col">
+        <%= @customer.id %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :name, "氏名" %>
+      </div>
+      <div class="col">
+        <%= f.text_field :last_name %>
+        <%= f.text_field :first_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :kana_name, "フリガナ" %>
+      </div>
+      <div class="col">
+        <%= f.text_field :kana_last_name %>
+        <%= f.text_field :kana_first_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :post_code, "郵便番号" %>
+      </div>
+      <div class="col">
+        <%= f.text_field :post_code %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :address, "住所" %>
+      </div>
+      <div class="col">
+        <%= f.text_field :address, size: 70 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :telephone_number, "電話番号" %>
+      </div>
+      <div class="col">
+        <%= f.text_field :telephone_number %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :email, "メールアドレス" %>
+      </div>
+      <div class="col">
+        <%= f.email_field :email, size: 40 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <%= f.label :is_deleted, "会員ステータス" %>
+      </div>
+      <div class="col">
+        <%= f.radio_button :is_deleted, 'false' %>
+        <%= f.label :is_deleted, "有効", value: false %>
+        <%= f.radio_button :is_deleted, 'true' %>
+        <%= f.label :is_deleted, "退会", value: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col offset-2">
+        <%= f.submit "変更を保存", class: "btn btn-green" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

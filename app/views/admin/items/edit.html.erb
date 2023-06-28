@@ -1,2 +1,64 @@
-<h1>Admin::Items#edit</h1>
-<p>Find me in app/views/admin/items/edit.html.erb</p>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-lg-3 offset-lg-1">
+      <h2>商品編集</h2>
+    </div>
+  </div>
+
+<%= render "layouts/errors" ,obj: @item %>
+
+  <div class="row">
+    <div class="mx-auto">
+    <%= form_with model: @item, url:admin_item_path, method: :patch, local: true do |f| %>
+    <table class="table table-borderless mt-2">
+      <tr>
+        <div class="form-group">
+          <td><%= f.label :商品画像 %></td>
+          <td><%= f.file_field :image, accept: "image/*" %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <td><%= f.label :商品名 %></td>
+          <td><%= f.text_field :name, :size=>"30" %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <td><%= f.label :商品説明 %></td>
+          <td><%= f.text_area :introduction, :size=>"30x5" %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <td><%= f.label :ジャンル %></td>
+          <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <td><%= f.label :税抜価格 %></td>
+          <td><%= f.text_field :price, :size=>"30" %> 円</td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <td><%= f.label :販売ステータス %></td>
+          <td>
+          <%= f.radio_button :is_active, :true, checked: true %>
+          <%= f.label :status_ture, "販売中" %>
+          <%= f.radio_button :is_active, :false %>
+          <%= f.label :status_false, "販売停止中" %>
+        </div>
+      </tr>
+      </div>
+    </table>
+
+    <div class="row">
+      <div class="col-5 mx-auto">
+        <%= f.submit "変更を保存", class:'btn btn-lg btn-green' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

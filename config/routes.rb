@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
 # 顧客用
 # URL /customers/sign_in ...
 devise_for :customers,skip: [:passwords], controllers: {
@@ -12,12 +13,12 @@ devise_for :admin,skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
- scope module: :pabulic do
+ scope module: :public do
  root to: 'homes#top'
  get '/about', to: 'homes#about'
  resources :items, only: %i[index show]
  resources :customers, only: [] do
- 
+
  collection do
  get 'show', to: 'customers#show', as: 'current_customer'
  get 'information/edit', to: 'customers#edit', as: 'edit_current_customer'
@@ -27,7 +28,7 @@ devise_for :admin,skip: [:registrations, :passwords], controllers: {
  end
 end
 
-resources :cart_items, only: %i[index create destroy] do
+resources :cart_items, only: %i[index create destroy update] do
  collection do
   delete :destroy_all
  end
@@ -39,7 +40,7 @@ resources :orders, only: %i[new create index show] do
     get :complete
   end
 end
-resources :addresses, only: %i[index edit create update destroy]
+resources :addresses, only: %i[index edit create update destroy] 
 end
 
 
